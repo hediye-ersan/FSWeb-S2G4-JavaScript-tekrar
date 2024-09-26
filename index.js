@@ -104,20 +104,23 @@ let ucetambolunenler,
   tekraredensayilar;
 
 // 3a çözümü
-for (const sayi of sayilar) {
-  if (sayi > enbuyuk) {
+enbuyuk = sayilar[0];
+enkucuk = sayilar[0];
+
+for (let sayi of sayilar) {
+  if (sayi> enbuyuk) {
     enbuyuk = sayi; 
   }
 }
-console.log(enbuyuk);
+console.log("en büyük sayi:" + enbuyuk);
 
-for (const sayi of sayilar) {
-  if (sayi < enkucuk) {
+for (let sayi of sayilar) {
+  if (sayi< enkucuk) {
     enkucuk = sayi; 
   }
 }
 
-console.log(enkucuk);
+console.log("en kucuk sayi:" + enkucuk);
 
 
 
@@ -157,23 +160,25 @@ console.log(siralisayilar);
 // 3f çözümü
 
 tekraredensayilar = {};
+tekrarSayisi = []; 
 
-for(let sayi of sayilar){
-  if(tekraredensayilar[sayi]===undefined){
-    tekraredensayilar[sayi]=1;
-  }else {
+for (let sayi of sayilar) {
+  if (tekraredensayilar[sayi] === undefined) {
+    tekraredensayilar[sayi] = 1;
+  } else {
     tekraredensayilar[sayi]++;
   }
 }
-const tekrarSayisi = []; 
+
+
 
 for (let sayi in tekraredensayilar) {
   if (tekraredensayilar[sayi] > 1) {
-    tekrarSayisi.push(`${sayi} sayisi ${tekrarSayisi[sayi]} kere tekrar edilmiştir`);
+    tekrarSayisi.push(`${sayi} sayısı ${tekraredensayilar[sayi]} kere tekrar edilmiştir`);
   }
 }
-console.log(tekraredensayilar);
-console.log(sayilar.length);
+
+console.log(tekrarSayisi);
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
