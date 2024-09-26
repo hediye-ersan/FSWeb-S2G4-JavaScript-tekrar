@@ -159,26 +159,25 @@ console.log(siralisayilar);
 
 // 3f çözümü
 
-tekraredensayilar = {};
-tekrarSayisi = []; 
+tekraredensayilar = [];
+ let tekrarSayisi = {}; 
 
 for (let sayi of sayilar) {
-  if (tekraredensayilar[sayi] === undefined) {
-    tekraredensayilar[sayi] = 1;
+  if (tekrarSayisi[sayi] === undefined) {
+    tekrarSayisi[sayi] = 1;
   } else {
-    tekraredensayilar[sayi]++;
+    tekrarSayisi[sayi]++;
   }
 }
 
 
-
-for (let sayi in tekraredensayilar) {
-  if (tekraredensayilar[sayi] > 1) {
-    tekrarSayisi.push(`${sayi} sayısı ${tekraredensayilar[sayi]} kere tekrar edilmiştir`);
+for (let sayi in tekrarSayisi) {
+  if (tekrarSayisi[sayi] > 1) {
+    tekraredensayilar.push(`${sayi} sayısı ${tekrarSayisi[sayi]} kere tekrar edilmiştir`);
   }
 }
 
-console.log(tekrarSayisi);
+console.log(tekraredensayilar);
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
